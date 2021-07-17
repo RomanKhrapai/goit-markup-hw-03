@@ -1,19 +1,3 @@
-/* кольори сайту:
-#FFFFFF
-#212121
-#757575
-#2196F3
-#F5F4FA
-#000000
-#ECECEC
-#FFFFFF 60%
-#2F303A
- */
-/* Шрифти
- font-family: 'Raleway', sans-serif;
-font-family: 'Roboto', sans-serif;
- */
-
 :root {
   --primary-text-color: #757575;
   --title-text-color: #212121;
@@ -39,20 +23,29 @@ p,
 ul {
   margin: 0;
 }
-.conteiner {
+ul {
+  list-style: none;
+  padding: 0;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+.container {
   padding-left: 15px;
   padding-right: 15px;
 
-  width: 1170px;
-  margin: auto;
+  width: 1200px;
+  margin: 0 auto;
 }
 
 /* header */
 .header {
+  display: flex;
   border-bottom: 1px solid #ececec;
+  height: 80px;
 }
-.header > .conteiner {
-  min-height: 80px;
+.header > .container {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -62,7 +55,6 @@ ul {
   align-items: center;
 }
 .logo {
-  text-decoration: none;
   font-family: "Raleway", sans-serif;
   font-size: 26px;
   line-height: 1.2;
@@ -75,45 +67,55 @@ ul {
   color: var(--accent-color);
 }
 .nav-list,
-.header-list {
+.contacts-list,
+.feature,
+.career,
+.comand,
+.works-list-button,
+.works-list {
   display: flex;
-  list-style-type: none;
-  padding-inline-start: 0;
 }
-.header-links {
-  text-decoration: none;
+.nav-link,
+.contacts-link {
   display: block;
-  padding: 10px 0;
+  padding: 20px 0;
 }
 .nav-link {
   color: var(--title-text-color);
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  line-height: 1.14;
 }
-.nav-list > .item,
-.header-list > .item {
+.nav-link-active {
+  color: var(--accent-color);
+}
+.nav-item,
+.contacts-item {
   margin-right: 50px;
 }
-.nav-list > .item:last-child,
-.header-list > .item:last-child {
+.nav-list > .nav-item:last-child,
+.contacts-list > .contacts-item:last-child {
   margin-right: 0;
 }
-.header-link {
+.contacts-link {
   color: var(--primary-text-color);
 }
-.header-links:hover,
-.header-links:focus {
+.nav-link:active,
+.nav-link:hover,
+.nav-link:focus,
+.contacts-link:hover,
+.contacts-link:focus {
   color: var(--accent-color);
 }
 
 /* main */
-section .conteiner {
-  padding: 94px 15px 94px 15px;
-}
-.hero-conteiner {
+.hero {
   padding-top: 200px;
   padding-bottom: 200px;
   background-color: #2f303a;
   text-align: center;
 }
+
 .hero-title {
   font-weight: 900;
   font-size: 44px;
@@ -139,7 +141,6 @@ section .conteiner {
   cursor: pointer;
   padding: 10px 32px;
   border-radius: 4px;
-  min-width: 200px;
   border: none;
 }
 .hero-button:focus,
@@ -148,33 +149,21 @@ section .conteiner {
   background-color: var(--fon-color);
 }
 /* особливості */
-.special > .special-conteiner {
-  padding-bottom: 0;
-}
-.invisible-title {
-  /* visibility: hidden; */
-  font-size: 0;
-}
-.special-list,
-.career-list,
-.comand-list,
-.works-list-button,
-.works-list {
-  display: flex;
-  list-style-type: none;
-  padding-inline-start: 0;
+.section {
+  padding-top: 94px;
+  padding-bottom: 94px;
 }
 
-.career-list > li > img,
-.comand-list > li > img {
-  display: block;
+.invisible-title {
+  font-size: 0;
 }
-.special-list > li:not(:last-child),
-.career-list > li:not(:last-child),
-.comand-list > li:not(:last-child) {
+
+.feature-item:not(:last-child),
+.career-item:not(:last-child),
+.comand-item:not(:last-child) {
   margin-right: var(--interval-box);
 }
-.special-list-title {
+.feature-title {
   font-weight: 700;
   font-size: 14px;
   line-height: 1.14;
@@ -185,7 +174,16 @@ section .conteiner {
 }
 
 /* чим займаємося */
-
+.no-pading-top {
+  padding-top: 0;
+}
+.career-img,
+.comand-foto,
+.work-img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
 .comand-title,
 .career-title {
   margin-bottom: 50px;
@@ -196,31 +194,25 @@ section .conteiner {
 
   color: var(--title-text-color);
 }
-.career-list {
-  display: flex;
-  list-style-type: none;
-  padding-inline-start: 0;
-}
-.career-list > li > img,
-.comand-list > li > img {
-  display: block;
-}
-/* Наша робота */
-.comand {
+
+/* Наша команда */
+
+.team {
   background-color: #f5f4fa;
 }
-
+/* .comand-item {
+} */
 .comand-text {
   font-size: 16px;
   line-height: 1.19;
-  padding-bottom: 30px;
+  padding: 30px 0;
   background-color: var(--fon-color);
   text-align: center;
   border-radius: 0px 0px 4px 4px;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
 }
-.comand-foto {
-  margin-bottom: var(--interval-box);
-}
+
 .comand-name {
   font-weight: 500;
   margin-bottom: 10px;
@@ -230,13 +222,12 @@ section .conteiner {
 /* footer */
 .low {
   background-color: #2f303a;
-}
-.low > .conteiner {
   padding-bottom: 60px;
   padding-top: 60px;
 }
-.low .logo {
+.low-logo {
   display: inline-block;
+  margin-right: 0;
   margin-bottom: 20px;
   color: var(--fon-color);
 }
@@ -245,17 +236,12 @@ section .conteiner {
 }
 .address-text {
   color: var(--fon-color);
-  margin-bottom: 9px;
 }
-.address-list {
-  list-style-type: none;
-  padding-inline-start: 0;
-}
+
 .address-links {
-  text-decoration: none;
   color: rgba(255, 255, 255, 0.6);
 }
-.address-list > li:not(:last-child) {
+.address-item:not(:last-child) {
   margin-bottom: 9px;
 }
 /* portfolio */
@@ -263,7 +249,7 @@ section .conteiner {
   margin-bottom: 50px;
   justify-content: center;
 }
-.works-list-button > li:not(:last-child) {
+.works-button-item:not(:last-child) {
   margin-right: 8px;
 }
 .works-button {
@@ -288,31 +274,23 @@ section .conteiner {
   flex-wrap: wrap;
 }
 
-.works-list > li {
+.works-item {
   margin-left: var(--interval-box);
   margin-top: var(--interval-box);
 }
-.work-links-text-box {
+.work-text-box {
   border: 1px solid #eeeeee;
   box-sizing: border-box;
   padding: 20px 24px;
 }
-.works-list > li:nth-child(3n + 1) {
+.works-item:nth-child(3n + 1) {
   margin-left: 0;
 }
-.works-list > li:not(:nth-child(n + 4)) {
+.works-item:not(:nth-child(n + 4)) {
   margin-top: 0;
 }
 
-.work-links {
-  text-decoration: none;
-  color: inherit;
-}
-
-.work-links > img {
-  display: block;
-}
-.work-links-text-box > h2 {
+.work-box-title {
   font-weight: 700;
   font-size: 18px;
   line-height: 2em;
@@ -320,8 +298,9 @@ section .conteiner {
   color: var(--title-text-color);
   margin-bottom: 4px;
 }
-.work-links-text-box > p {
+.work-text {
   font-size: 16px;
   line-height: 1.87em;
   letter-spacing: 0.03em;
+  color: inherit;
 }
